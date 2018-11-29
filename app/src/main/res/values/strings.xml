@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">WUP</string>
+    <string name="card_name">Card Name</string>
+    <string name="available_label">Available</string>
+    <string name="current_balance_label">Current balance</string>
+    <string name="minimum_payment_label">Min. payment</string>
+    <string name="due_date_label">Due date</string>
+    <string name="details">DETAILS</string>
+    <string name="imageview_content_description">Default ImageView description</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,45 +9,47 @@
         android:layout_width="wrap_content"
         android:layout_height="26dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:text="Premium Card"
+        android:text="@string/card_name"
         android:textColor="#FF004E7B"
-        android:textSize="20.24sp"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/separator1"
         android:layout_width="0dp"
         android:layout_height="0.33dp"
+        android:layout_marginTop="16dp"
         android:background="#DE000000"
-        app:layout_constraintBottom_toBottomOf="@+id/cardNameTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardNameTextView" />
 
     <ImageView
         android:id="@+id/cardImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/imageview_content_description"
         android:src="@drawable/cccard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/separator1" />
 
     <ImageView
         android:id="@+id/leftArrowImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/imageview_content_description"
         android:src="@drawable/ic_arrowleft"
         app:layout_constraintBottom_toBottomOf="@+id/cardImageView"
-        app:layout_constraintEnd_toStartOf="@+id/cardImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cardImageView" />
 
@@ -56,40 +57,145 @@
         android:id="@+id/rightArrowImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/imageview_content_description"
         android:src="@drawable/ic_arrowright"
         app:layout_constraintBottom_toBottomOf="@+id/cardImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cardImageView"
         app:layout_constraintTop_toTopOf="@+id/cardImageView" />
 
-    <!--<android.support.design.widget.TabLayout-->
-        <!--android:id="@+id/tabDots"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_marginStart="8dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/cardImageView"-->
-        <!--app:tabBackground="@drawable/dot_selector"-->
-        <!--app:tabGravity="center"-->
-        <!--app:tabIndicatorHeight="0dp" />-->
+    <TextView
+        android:id="@+id/currentBalanceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
 
-    <!--<ProgressBar-->
-        <!--android:id="@+id/balanceChart"-->
-        <!--style="?android:attr/progressBarStyleHorizontal"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginStart="32dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:layout_marginEnd="32dp"-->
-        <!--android:progressDrawable="@drawable/custom_progressbar"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/tabDots" />-->
+        android:text="@string/current_balance_label"
+        android:textColor="#FF004E7B"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/separator4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/currentBalanceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="#05293E"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/separator4"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/currentBalanceCurrencyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="#99000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/separator4"
+        app:layout_constraintEnd_toStartOf="@+id/currentBalanceTextView"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toEndOf="@+id/currentBalanceLabel" />
+
+
+    <View
+        android:id="@+id/separator4"
+        android:layout_width="0dp"
+        android:layout_height="0.33dp"
+        android:layout_margin="16dp"
+        android:background="#DE000000"
+        app:layout_constraintBottom_toTopOf="@+id/minPaymentLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/minPaymentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/minimum_payment_label"
+        android:textColor="#FF004E7B"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/separator3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/minPaymentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="#05293E"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/separator3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/minPaymentCurrencyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="#99000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/separator3"
+        app:layout_constraintEnd_toEndOf="@+id/currentBalanceCurrencyTextView"
+        app:layout_constraintStart_toStartOf="@+id/currentBalanceCurrencyTextView" />
+
+    <View
+        android:id="@+id/separator3"
+        android:layout_width="0dp"
+        android:layout_height="0.33dp"
+        android:layout_margin="16dp"
+        android:background="#DE000000"
+        app:layout_constraintBottom_toTopOf="@+id/dueDateLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/dueDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/due_date_label"
+        android:textColor="#FF004E7B"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/separator2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/dueDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="#05293E"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/separator2"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/separator2"
+        android:layout_width="0dp"
+        android:layout_height="0.33dp"
+        android:layout_margin="16dp"
+        android:background="#DE000000"
+        app:layout_constraintBottom_toTopOf="@+id/detailsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/detailsButton"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/shape_button"
+        android:text="@string/details"
+        android:textColor="#539AC6"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
